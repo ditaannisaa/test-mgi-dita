@@ -1,21 +1,22 @@
 import React, {useEffect, useState} from 'react';
 import {Pressable, Text, View} from 'react-native';
+import {ImageScreen} from './imageScreen';
 
 export const Home = ({navigation}: any) => {
   const [countdown, setCountdown] = useState(5);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCountdown(prevCount => {
-        if (prevCount === 0) {
-          return 5;
-        }
-        return prevCount - 1;
-      });
-    }, 1000);
+  //   useEffect(() => {
+  //     const interval = setInterval(() => {
+  //       setCountdown(prevCount => {
+  //         if (prevCount === 0) {
+  //           return 5;
+  //         }
+  //         return prevCount - 1;
+  //       });
+  //     }, 1000);
 
-    return () => clearInterval(interval);
-  }, []);
+  //     return () => clearInterval(interval);
+  //   }, []);
 
   return (
     <View
@@ -24,14 +25,15 @@ export const Home = ({navigation}: any) => {
         justifyContent: 'center',
         height: '100%',
       }}>
-      <Text
+      {/* <Text
         style={{
           fontSize: 96,
           textAlign: 'center',
           color: 'black',
         }}>
         {countdown}
-      </Text>
+      </Text> */}
+      <ImageScreen />
     </View>
   );
 };
