@@ -34,6 +34,7 @@ export const ImageScreen = () => {
     },
     productColumn: {
       width: '48%', // Lebar setengah dari parent untuk membuat dua kolom
+      height: Dimensions.get('window').height / 2,
       marginBottom: 16,
       padding: 16,
       borderWidth: 1,
@@ -52,12 +53,10 @@ export const ImageScreen = () => {
       {image?.map(product => (
         <View key={product.id} style={styles.productColumn}>
           <TouchableOpacity>
-            <View style={{width: '100%'}}>
-              <Image
-                source={{uri: product.url}}
-                style={{width: '100%', height: 200}}
-              />
-            </View>
+            <Image
+              source={{uri: product.url}}
+              style={{width: '100%', height: '100%'}}
+            />
           </TouchableOpacity>
         </View>
       ))}
